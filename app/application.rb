@@ -23,7 +23,7 @@ class Application
     resp.finish
   end
 
-  
+
 
   def handle_search(search_term)
     if @@items.include?(search_term)
@@ -33,5 +33,3 @@ class Application
     end
   end
 end
-
-
