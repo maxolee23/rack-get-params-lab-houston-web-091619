@@ -1,6 +1,7 @@
 class Application
 
   @@items = ["Apples","Carrots","Pears"]
+  @@cart = ["Apples", "Carrots", "Pears"]
 
   def call(env)
     resp = Rack::Response.new
@@ -17,8 +18,12 @@ class Application
       resp.write "Path Not Found"
     end
 
+    if req.path.match(/cart/)
+
     resp.finish
   end
+
+  
 
   def handle_search(search_term)
     if @@items.include?(search_term)
@@ -28,3 +33,5 @@ class Application
     end
   end
 end
+
+
